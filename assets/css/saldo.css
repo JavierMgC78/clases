@@ -1,0 +1,13 @@
+.saldo-area{
+    padding: 2rem;
+
+}
+
+.saldo-area p{
+line-height: 3rem;
+margin-bottom: 1rem;
+padding: 0 1rem;
+background-color: rgb(192, 255, 234);
+color: black;
+font-size: 1.5rem;
+}

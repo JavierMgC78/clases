@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doguito Petshop | Crear cuenta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./assets/css/base/base.css">
+    <link rel="stylesheet" href="./assets/css/registro.css">
+    <link rel="stylesheet" href="./assets/css/componentes/card.css">
+    <link rel="stylesheet" href="./assets/css/componentes/inputs.css">
+    <link rel="stylesheet" href="./assets/css/componentes/button.css">
+    <link rel="stylesheet" href="./assets/css/saldo.css">
+</head>
+<body>
+    <main class="container flex flex--column flex--center">
+        <div class="cadastro-cabecalho">
+            <img src="./assets/img/bankito.png" alt="Logo Doguito" class="registry-header__logo">
+            <h1 class="registry-header__title">Bankkito</h1>
+        </div>
+        <section class="cartao">
+            <h2 class="card__title">Movimientos de la cuenta</h2>
+            <form action="./registro_concluido.html" class="formulario flex flex--column" id="form_registro">
+                <fieldset>
+                    <legend class="form__label"></legend>
+                    <!-- cliente -->
+                    <div class="input-container">
+                        <select name="nombre" id="nombre" class="select" data-tipo="nombre" required onblur="validar(this)" >
+                                <option value="">Seleccione un cliente</option>
+                                <option value="1">Peter Park</option>
+                                <option value="2">Diana de Themys</option>
+                        </select>
+                        <label class="input-label" for="name"></label>
+                        <span class="input-message-error">Este campo no es valido</span>
+                    </div>
+
+                    <!-- Operación -->
+                    <div class="input-container">
+                        <select name="operacion" id="operacion" class="select" placeholder="Nombre" data-tipo="nombre" required onblur="validar(this)">
+                                <option value="">Operación</option>
+                                <option value="1">Depositar</option>
+                                <option value="2">Retirar</option>
+                        </select>
+                        <label class="input-label" for="name"></label>
+                        <span class="input-message-error">Este campo no es valido</span>
+                    </div>
+
+                    <!-- monto -->
+                    <div class="input-container">
+                        <input name="monto" id="monto" class="input" type="number" min="0" step=".01" lang="en-US" data-tipo="float" required pattern="^\d+(?:\.\d+)?$" onblur="validar(this)" ></input>
+                        <label class="input-label" for="name">Ingrese el monto</label>
+                        <span class="input-message-error">Este campo no es valido</span>
+                    </div>
+                    
+                </fieldset>
+                <fieldset>
+                    <p>Todos los campos son obligatorios</p>
+                </fieldset>
+                <button class="button" id="sbmt" >Aplicar</button>
+                
+                <fieldset>
+                    <div class="saldo-area" id="saldo-area"></div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <script src="assets/js/validar_campo.js"></script>
+    <script src="assets/js/index.js" type="module"></script>
+</body>
+</html>
